@@ -17,7 +17,6 @@ public class Student {
         id = n;
     }
     public  String getId(){
-
         return id;
     }
     public void setGroup(String n){

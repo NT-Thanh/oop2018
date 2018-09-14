@@ -1,5 +1,7 @@
 package week1;
 
+import javax.xml.bind.SchemaOutputResolver;
+
 public class StudentManagement {
 
     // TODO: khai báo thuộc tính students là array chứa các đối tượng thuộc lớp Student (max. 100)
@@ -49,15 +51,22 @@ public class StudentManagement {
     public static void main(String[] args) {
         // TODO:
         StudentManagement st = new StudentManagement();
-        st.students[0] = new Student("Huong", "001", "hohoho@");
-        st.students[1] = new Student("Hong", "002", "hahaha@");
-        st.students[2] = new Student("Hanh", "003", "hehehe@");
+        st.students[0] = new Student("SinhVien", "001", "Mail@");
+        st.students[1] = new Student("KhongPhaiSinhVien", "002", "Mlia@");
+        st.students[2] = new Student("KhongBietLaAi", "003", "Mial@");
         st.students[0].setGroup("INT2204 5");
         st.students[1].setGroup("INT2204 1");
         st.students[2].setGroup("INT2204 1");
+
+        System.out.println("-----Cau 9-10------");
         System.out.println(st.sameGroup(st.students[0], st.students[1]));
+        System.out.println(st.sameGroup(st.students[1], st.students[2]));
+
+        System.out.println("-----Cau 12------");
+        st.studentsByGroup();
         st.removeStudent("001");
-        System.out.println(st.sameGroup(st.students[0], st.students[2]));
+
+        System.out.println("-----Cau 13------");
         st.studentsByGroup();
     }
 }
