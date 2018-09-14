@@ -76,6 +76,15 @@ public class Student {
     String getInfo() {
         // TODO:
 //        System.out.println(name + "\n" + id + "\n" + group + "\n" + email);
-        return (name + "\n" + id + "\n" + group + "\n" + email);
+        return toString();
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", id='" + id + '\'' +
+                ", email='" + email + '\'' +
+                '}';
     }
 }
