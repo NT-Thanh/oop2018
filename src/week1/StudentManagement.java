@@ -1,7 +1,5 @@
 package week1;
 
-import javax.xml.bind.SchemaOutputResolver;
-
 public class StudentManagement {
 
     // TODO: khai báo thuộc tính students là array chứa các đối tượng thuộc lớp Student (max. 100)
@@ -30,7 +28,7 @@ public class StudentManagement {
         for (int n = 0; n < j; n++) {
             System.out.println(Groups[n]);
             for (int z = 0; z < i; z++) {
-                if (students[z].getGroup().equals(Groups[n]) && students[z].getId() != "deleted")
+                if (students[z].getGroup().equals(Groups[n]) && !students[z].getId().equals("deleted"))
                     System.out.println(students[z].getInfo());
             }
         }
@@ -41,7 +39,7 @@ public class StudentManagement {
         // TODO:
         int i = 0;
         while (students[i] != null) {
-            if (students[i].getId() == id) {
+            if (students[i].getId().equals(id)) {
                 students[i].setId("deleted");
             }
             i++;
