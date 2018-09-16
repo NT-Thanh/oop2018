@@ -26,7 +26,7 @@ public class StudentManagement {
             i++;
         }
         for (int n = 0; n < j; n++) {
-            System.out.println(Groups[n]);
+            System.out.println("Nhom: " + Groups[n]);
             for (int z = 0; z < i; z++) {
                 if (students[z].getGroup().equals(Groups[n]) && !students[z].getId().equals("deleted"))
                     System.out.println(students[z].getInfo());
