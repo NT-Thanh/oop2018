@@ -6,22 +6,29 @@ public class Task3 {
 
 //TODO: khai báo 3 class tương ứng với 3 đối tượng thực tế ở dưới
 
-public class Task3_Ball {
-    int radius, weigth;
+class Task3_Ball {
+    int radius, weight;
     String color;
 
-    Task3_Ball(){
+    //TODO: Constructor
+    Task3_Ball() {
         radius = 1;
-        weigth = 1;
+        weight = 1;
         color = "white";
     }
+    Task3_Ball(int radius, int weight, String color){
+        this.radius = radius;
+        this.weight = weight;
+        this.color = color;
+    }
 
+    //TODO: getters & setters
     public int getRadius() {
         return radius;
     }
 
     public int getWeigth() {
-        return weigth;
+        return weight;
     }
 
     public String getColor() {
@@ -32,29 +39,85 @@ public class Task3_Ball {
         this.radius = radius;
     }
 
-    public void setWeigth(int weigth) {
-        this.weigth = weigth;
+    public void setWeight(int weight) {
+        this.weight = weight;
     }
 
     public void setColor(String color) {
         this.color = color;
     }
 
-    public int price(){
-        return radius*10 + weigth*10;
+    //TODO: 3 Phương thức
+    public int price() {
+        return radius * 10 + weight * 10;
     }
-    public String suitableForWhom{
-        if(radius>=3) return "For Adult";
-        else return "For Children";
+
+    public String suitableForWhom(){
+        if (radius <= 4 && radius > 0) return "For Children";
+        else if (radius <= 0) return "For no one";
+        else return "For Adult";
     }
-    public String type{
-        if(color.equals("white")) return "For competition";
+
+    public String type(){
+        if (color.equals("white")) return "For competition";
         else return "For excercise";
     }
 }
-public class Task3_Chair {
-    int height, weight, matierial;
+
+class Task3_Chair {
+    int height, weight;
+    String material;
+
+    //TODO: getters & setters
+    public int getHeight() {
+        return height;
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+
+    public String getMaterial() {
+        return material;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
+    }
+
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
+
+    public void setMatierial(String matierial) {
+        this.material = material;
+    }
+
+    // TODO: Constructors
+    Task3_Chair(){
+        height = 1;
+        weight = 1;
+        material = "wood";
+    }
+    Task3_Chair(int height, int weight, String material){
+        this.height = height;
+        this.weight = weight;
+        this.material = material;
+    }
+
+    //TODO: 3 Phương thức
+    public int price(){
+        return height*10 + weight*10;
+    }
+    public String suitalbeForWhom(){
+        if (height <= 4 && height > 0) return "For Children";
+        else if (height <= 0) return "For no one";
+        else return "For Adult";
+    }
+
 
 }
-public class Task3_Desk {
+
+class Task3_Desk {
+
 }
