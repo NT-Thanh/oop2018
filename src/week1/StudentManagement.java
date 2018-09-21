@@ -39,10 +39,13 @@ public class StudentManagement {
         // TODO:
         int i = 0;
         while (students[i] != null) {
-            if (students[i].getId().equals(id)) {
-                students[i].setId("deleted");
+            if (students[i].getId().equals(id)){
+                break;
             }
             i++;
+        }
+        for(int j=i; students[j]!=null; j++){
+            students[j]=students[j+1];
         }
     }
 
