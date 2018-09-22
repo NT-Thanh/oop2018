@@ -51,11 +51,10 @@ public class Fraction {
         f.reduce();
         return f;
     }
-    public boolean equals(Object obj){
-        Fraction a = obj;
-        Fraction b (numerator, denominator);
-        if()
-    }
+//    public boolean equals(Object obj){
+////        Fraction a = obj;
+////        Fraction b = new Fraction(numerator, denominator);
+//    }
 
     @Override
     public String toString() {
