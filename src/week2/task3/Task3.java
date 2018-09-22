@@ -7,27 +7,32 @@ public class Task3 {
 
     public static void main(String[] args){
         Task3 t = new Task3();
-
-        t.customer[0] = new Customer("Pete", "child", "for studying", 150);
+        //TODO: build up customers
+        t.customer[0] = new Customer("Pete", "child", "for studying", 70);
         t.customer[1] = new Customer("Homie", "adult", "for work", 250);
-
+        t.customer[2] = new Customer("Jame", "adult", "for work", 150);
+//        t.customer[0].setAge(null);
+//        t.customer[0].setBuyingPurpose(null);
+        //TODO: build up productions
         t.desk[0] = new Desk(4, 4, "black");
         t.desk[1] = new Desk(6, 5, "brown");
-        t.desk[2] = new Desk(-3, -2, "gray");
-        t.chair[0] = new Chair(6, 6, "wood");
+        t.desk[2] = new Desk(3, 2, "gray");
+        t.chair[0] = new Chair(6, 8, "wood");
         t.chair[1] = new Chair(3, 3, "gold");
-        t.chair[2] = new Chair(-2, -2, "air");
-
+        t.chair[2] = new Chair(2, 2, "air");
+        //TODO: find out what to buy
         for(int i=0; t.customer[i] != null; i++){
             System.out.println(t.customer[i].infomation() + " can buy:");
             for(int j=0; t.desk[j] != null; j++){
                 if(t.customer[i].isSuitableDesk(t.desk[j]))
-                    System.out.println(t.desk[j].infomation());
+                    System.out.println(t.desk[j].infomation()+ " price: " + t.desk[j].price());
             }
             for(int j=0; t.chair[j] != null; j++){
                 if(t.customer[i].isSuitableChair(t.chair[j]))
-                    System.out.println(t.chair[i].infomation());
+                    System.out.println(t.chair[j].infomation()+ " price: " + t.chair[j].price());
             }
+            System.out.println("Pay by " + t.customer[i].payingMethod());
+            System.out.println("------------------");
         }
     }
 
@@ -52,6 +57,10 @@ class Customer {
         return priceCanPay;
     }
 
+    public String getBuyingPurpose() {
+        return buyingPurpose;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -62,6 +71,10 @@ class Customer {
 
     public void setPriceCanPay(int priceCanPay) {
         this.priceCanPay = priceCanPay;
+    }
+
+    public void setBuyingPurpose(String buyingPurpose) {
+        this.buyingPurpose = buyingPurpose;
     }
     //TODO: Constructors
 
@@ -91,7 +104,7 @@ class Customer {
     }
     public String payingMethod(){
         if(priceCanPay >= 200) return "credit card";
-        else return "money";
+        else return "cash";
     }
 
     public String infomation() {

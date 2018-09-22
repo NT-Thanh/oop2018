@@ -13,16 +13,17 @@ public class Task1 {
     public static int fibonacci(int n) {
         // TODO: Tìm số fibonacci ở vị trí n
         if(n < 0){
-            System.out.println("Invalid Fibonacci");
-            return 0;
+            System.out.println("Invalid Fibonacci, set value to -1");
+            return -1;
         }
         if(n==0) return 0;
         else if(n==1) return 1;
         else return(fibonacci(n-1) + fibonacci(n-2));
     }
     public static void main (String[] args){
-        int a=-10, b=100;
+        int a=-33, b=-100;
         System.out.println(gcd(a, b));
-        System.out.println(fibonacci(-3));
+        int c=-5;
+        System.out.println("Fibonacci(" + c + "): " + fibonacci(c));
     }
 }

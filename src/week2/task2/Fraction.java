@@ -9,7 +9,7 @@ public class Fraction {
     public Fraction(int numerator, int denominator) {
         // TODO: khởi tạo giá trị cho các thuộc tính numberator (tử số), denominator (mẫu số)
         if(denominator==0){
-            System.out.println("Invalid fraction");
+            System.out.println("Invalid Fraction");
             return ;
         }
         this.numerator = numerator;
@@ -51,20 +51,26 @@ public class Fraction {
         f.reduce();
         return f;
     }
-//    public boolean equals(Object obj){
-////        Fraction a = obj;
-////        Fraction b = new Fraction(numerator, denominator);
-//    }
+    public boolean equals(Object obj){
+        //TODO: So sanh 2 phan so
+        Fraction other = (Fraction) obj;
+        if(denominator ==0 || other.denominator == 0) return false;
+        else if(other.subtract(this).numerator==0)
+            return true;
+        return false;
+    }
 
     @Override
     public String toString() {
+        if(denominator==0) return "Invalid Fraction";
+        else if(numerator == 0) return "{0}";
         return "Fraction{" + numerator +'/' + denominator +'}';
     }
 
     public void reduce(){
         // TODO: Toi gian phan so
         int a=1;
-        for(int i=numerator; i>0; i--){
+        for(int i=Math.abs(numerator); i>0; i--){
             if(numerator%i==0 && denominator%i==0){
                 a=i;
                 break;
@@ -77,12 +83,18 @@ public class Fraction {
         
     }
     public static void main(String[] args){
-        Fraction ps = new Fraction(3,4);
-        Fraction ps2 = new Fraction(6,8);
-        System.out.println(ps.add(ps2).toString());
-        System.out.println(ps.multiply(ps2).toString());
-        System.out.println(ps.subtract(ps2).toString());
-        System.out.println(ps.divide(ps2).toString());
-        System.out.println(ps.equals(ps2));
+        Fraction ps = new Fraction(20,8);
+        System.out.println(ps.toString());
+        Fraction ps2 = new Fraction(33,4);
+        System.out.println(ps2.toString());
+        System.out.println("Add result: " + ps.add(ps2).toString());
+
+        System.out.println("Subtract result: " + ps.subtract(ps2).toString());
+
+        System.out.println("Multiply result: " + ps.multiply(ps2).toString());
+
+        System.out.println("Divide result: " + ps.divide(ps2).toString());
+
+        System.out.println("Equals result: " + ps.equals(ps2));
     }
 }
