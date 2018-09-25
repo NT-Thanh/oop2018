@@ -64,11 +64,12 @@ public class Fraction {
     public String toString() {
         if(denominator==0) return "Invalid Fraction";
         else if(numerator == 0) return "{0}";
+        else if(denominator == 1) return "Fraction{" + numerator +'}';
         return "Fraction{" + numerator +'/' + denominator +'}';
     }
 
     public void reduce(){
-        // TODO: Toi gian phan so
+        // TODO: Toi gian phan so & dinh dang
         int a=1;
         for(int i=Math.abs(numerator); i>0; i--){
             if(numerator%i==0 && denominator%i==0){
@@ -80,13 +81,23 @@ public class Fraction {
             numerator /= a;
             denominator /= a;
         }
-        
+
+        if(numerator < 0 && denominator <0){
+            numerator *= -1;
+            denominator *= -1;
+        }
+        else if(denominator < 0){
+            numerator *= -1;
+            denominator *= -1;
+        }
     }
+
     public static void main(String[] args){
         Fraction ps = new Fraction(20,8);
         System.out.println(ps.toString());
-        Fraction ps2 = new Fraction(33,4);
+        Fraction ps2 = new Fraction(5,4);
         System.out.println(ps2.toString());
+        System.out.println("----------------");
         System.out.println("Add result: " + ps.add(ps2).toString());
 
         System.out.println("Subtract result: " + ps.subtract(ps2).toString());

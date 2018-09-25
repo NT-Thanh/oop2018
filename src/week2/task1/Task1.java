@@ -23,6 +23,8 @@ public class Task1 {
     public static void main (String[] args){
         int a=-33, b=-100;
         System.out.println(gcd(a, b));
+
+
         int c=-5;
         System.out.println("Fibonacci(" + c + "): " + fibonacci(c));
     }
