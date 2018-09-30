@@ -1,6 +1,5 @@
 package week2.task2;
 
-import com.sun.org.apache.xpath.internal.SourceTree;
 
 public class Fraction {
 
