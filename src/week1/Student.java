@@ -52,7 +52,7 @@ public class Student {
      * @param sid
      * @param em
      */
-    Student(String n, String sid, String em) {
+    public Student(String n, String sid, String em) {
         // TODO:
         name = n;
         id = sid;
@@ -72,7 +72,7 @@ public class Student {
         group = s.group;
     }
 
-    String getInfo() {
+    public String getInfo() {
         // TODO:
 //        System.out.println(name + "\n" + id + "\n" + group + "\n" + email);
         return toString();
